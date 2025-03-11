@@ -1,0 +1,42 @@
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quizzet - Học đến điên dại</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Chào mừng bạn đến với Quizzet</h1>
+            <p>Quizzet là một cộng đồng chia sẻ tài liệu dành cho sinh viên Đại học Công nghệ Đồng Nai. Tại đây, bạn có thể tạo bài quiz online, ôn tập bằng flashcard, và truy cập kho tài liệu phong phú từ các môn đại cương đến chuyên ngành.</p>
+            <p>Hãy bắt đầu học tập và khám phá ngay hôm nay!</p>
+        </div>
+
+        <!-- Script Chatbase -->
+        <script>
+            (function() {
+                if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                    window.chatbase = (...args) => {
+                        if (!window.chatbase.q) window.chatbase.q = [];
+                        window.chatbase.q.push(args);
+                    };
+                    window.chatbase = new Proxy(window.chatbase, {
+                        get(target, prop) {
+                            if (prop === "q") return target.q;
+                            return (...args) => target(prop, ...args);
+                        }
+                    });
+                }
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "BdLlAdw69Esta4XhplQlO";
+                script.setAttribute("chatbotId", "BdLlAdw69Esta4XhplQlO"); // Thêm chatbotId
+                script.async = true;
+                document.body.appendChild(script);
+            })();
+        </script>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
